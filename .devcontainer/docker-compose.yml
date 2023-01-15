@@ -6,7 +6,7 @@ services:
     command: sleep infinity
     volumes:
       - ..:/workspaces/proteinuslp-back
-      - rails_gems:/usr/local/bundle
+      # - rails_gems:/usr/local/bundle
     ports:
       - "3000:3000"
 

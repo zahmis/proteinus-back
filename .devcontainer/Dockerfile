@@ -1,4 +1,4 @@
-FROM ruby:2.7.0
+FROM ruby:3.2.0
 
 # Set timezone.
 ENV TZ="Asia/Tokyo"
