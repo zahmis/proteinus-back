@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  rails:
+    build:
+      context: .
+    command: sleep infinity
+    volumes:
+      - ..:/workspaces/proteinuslp-back
+      - rails_gems:/usr/local/bundle
+    ports:
+      - "3000:3000"
+
+volumes:
+  rails_gems:

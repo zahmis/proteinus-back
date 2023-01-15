@@ -1,0 +1,14 @@
+{
+  "name": "proteinuslp-back",
+  "dockerComposeFile": ["docker-compose.yml"],
+  "service": "rails",
+  "workspaceFolder": "/workspaces/proteinuslp-back",
+
+  //   "extensions": ["GitHub.copilot", "GitHub.copilot-labs"],
+
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash"
+  },
+
+  "remoteUser": "vscode"
+}
