@@ -1,0 +1,31 @@
+require: rubocop-rails
+
+Rails:
+  Enabled: true
+
+AllCops:
+  TargetRubyVersion: 3.2.0
+  Exclude:
+    - .git/**/*
+    - bin/**/*
+    - config/**/*
+    - db/**/*
+    - node_modules/**/*
+    - log/**/*
+    - public/**/*
+    - storage/**/*
+    - tmp/**/*
+    - vendor/**/*
+    - config.ru
+    - Rakefile
+    - Gemfile
+    - lib/mapbox.rb
+    - lib/fcm.rb
+  NewCops: disable
+
+
+Metrics/ClassLength:
+  Max: 250
+
+Layout/LineLength:
+  Max: 150
