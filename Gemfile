@@ -64,7 +64,7 @@ group :development do
   # gem "spring"
 
   gem 'rubocop-rails'
-  gem 
+  gem 'rack-cors'
 end
 
 group :test do
