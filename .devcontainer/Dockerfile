@@ -10,8 +10,8 @@ RUN gem install rails
 # [Optional] Comment/Uncomment this section to avoid/install additional OS packages.
 ENV RAILS_DEVELOPMENT_HOSTS=".githubpreview.dev"
 
-RUN apt-get update
-# [Optional] Uncomment this line to install additional gems.
+RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
+    && apt-get -y install --no-install-recommends graphviz mariadb-client
 # RUN gem install <your-gem-names-here>
 
 # [Optional] Uncomment this line to install global node packages.

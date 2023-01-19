@@ -6,9 +6,42 @@ services:
     command: sleep infinity
     volumes:
       - ..:/workspaces/proteinuslp-back
-      # - rails_gems:/usr/local/bundle
     ports:
       - "3000:3000"
+    networks:
+      - internal_network
+      - external_network
+    # environment:
+    #   - RAILS_DB_HOST=db
+    depends_on:
+      - db
+    links:
+      - db
+    tty: true
+    stdin_open: true
+
+  db:
+    image: mysql
+    environment:
+      MYSQL_DATABASE: proteinuslp
+      MYSQL_ROOT_PASSWORD: ""
+      MYSQL_ALLOW_EMPTY_PASSWORD: 1
+      MYSQL_TCP_PORT: 3306
+      TZ: Asia/Tokyo
+    volumes:
+      - db-volume:/var/lib/mysql
+    networks:
+      - internal_network
+      - external_network
+    ports:
+      - 3306:3306
+    command: mysqld --character-set-server=utf8 --collation-server=utf8_unicode_ci
 
 volumes:
   rails_gems:
+  db-volume:
+
+networks:
+  internal_network:
+    internal: true
+  external_network:
