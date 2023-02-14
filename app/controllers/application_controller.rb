@@ -1,5 +1,2 @@
-class ApplicationController < ActionController::Base
-  def index
-    render html: 'Hello, World!'
-  end
+class ApplicationController < ActionController::API
 end
